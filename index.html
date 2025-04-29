@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
   <title>Accessibility Resources Portal</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="styles.css" rel="stylesheet" />
 </head>
-<body class="flex flex-col min-h-screen">
-  <a href="#main-content" class="sr-only focus:not-sr-only">Skip to Main Content</a>
+<body>
+  <a href="#mainContent" class="sr-only focus:not-sr-only">Skip to main content</a>
 
-  <div id="global-header"></div>
+  <header class="bg-gray-800 text-white p-4">
+    <div class="flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Accessibility Resources Portal</h1>
+      <nav aria-label="Language switcher">
+        <ul class="flex space-x-4">
+          <li><a href="index.html" lang="en" class="text-blue-400 underline">English</a></li>
+          <li><a href="index-ar.html" lang="ar" class="text-blue-400 underline">العربية</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <main id="main-content" class="flex-1 p-6 max-w-5xl mx-auto space-y-6">
+  <nav class="bg-gray-100 p-6">
+    <h2 class="text-xl font-semibold mb-4">Navigation</h2>
+    <ul class="space-y-2">
+      <li><a href="checklists/index.html" class="text-blue-600 underline">Checklists</a></li>
+      <li><a href="quick-guides/index.html" class="text-blue-600 underline">Quick Start Guides</a></li>
+      <li><a href="tools/index.html" class="text-blue-600 underline">Tools</a></li>
+    </ul>
+  </nav>
+
+  <main id="mainContent" class="p-6">
     <h2 class="text-2xl font-bold mb-4">Welcome to the Accessibility Resources Portal</h2>
-    <p>This site provides accessibility checklists, quick start guides for assistive technologies, and tools to help you create and test accessible digital content for web, mobile, and documents. Explore the resources to enhance your accessibility knowledge and implementation.</p>
+    <p class="mb-4">
+      This portal is dedicated to providing essential resources for developers, project managers, quality assurance teams, and accessibility specialists. It includes checklists, beginner-friendly guides, and tools to help ensure digital accessibility and compliance with international standards like WCAG.
+    </p>
+    <p>
+      Use the navigation above to explore different sections of the portal.
+    </p>
   </main>
 
-  <div id="global-footer"></div>
-
-  <script>
-    // Load Global Header
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('global-header').innerHTML = data;
-      });
-
-    // Load Global Footer
-    fetch('footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('global-footer').innerHTML = data;
-      });
-  </script>
+  <footer class="bg-gray-200 text-center p-4 mt-10">
+    <p>&copy; 2025 Accessibility Resources Portal. All rights reserved.</p>
+  </footer>
 </body>
 </html>
