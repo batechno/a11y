@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TalkBack Quick Start Guide</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 20px;
+        line-height: 1.6;
+    }
+    h1, h2 {
+        color: #2c3e50;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+
+<h1>TalkBack Quick Start Guide</h1>
+<p>Updated for Android 13 and 14 versions (2023–2024). Focused on modern web and app accessibility testing.</p>
+
+<h2>Turning TalkBack On/Off</h2>
+<ul>
+    <li><strong>Quick Toggle:</strong> Press both Volume Up and Volume Down buttons together for 3 seconds (if enabled).</li>
+    <li><strong>Using Google Assistant:</strong> Say "Turn on TalkBack" or "Turn off TalkBack".</li>
+    <li><strong>Settings:</strong> Settings > Accessibility > TalkBack.</li>
+</ul>
+
+<h2>Basic Navigation</h2>
+<ul>
+    <li><strong>Explore by Touch:</strong> Drag your finger around the screen to hear what is under your finger.</li>
+    <li><strong>Swipe Right:</strong> Move to next item.</li>
+    <li><strong>Swipe Left:</strong> Move to previous item.</li>
+    <li><strong>Double-Tap Anywhere:</strong> Activate the currently focused item.</li>
+</ul>
+
+<h2>Gesture Highlights</h2>
+<ul>
+    <li><strong>Swipe Up or Down:</strong> Change navigation setting (e.g., Headings, Links, Controls).</li>
+    <li><strong>Swipe Up then Right:</strong> Open TalkBack Menu.</li>
+    <li><strong>Swipe Down then Left:</strong> Go back to previous screen.</li>
+    <li><strong>Two-Finger Swipe Up/Down:</strong> Scroll up or down through a page or list.</li>
+</ul>
+
+<h2>Reading and Navigation</h2>
+<ul>
+    <li><strong>Read From Top:</strong> Swipe Down then Right, then select "Read from top".</li>
+    <li><strong>Read From Next Item:</strong> Swipe Down then Right, then select "Read from next item".</li>
+</ul>
+
+<h2>Editing Text</h2>
+<ul>
+    <li><strong>Move Insertion Point:</strong> Swipe Left or Right in a text field.</li>
+    <li><strong>Delete Character:</strong> Swipe Left then Down.</li>
+</ul>
+
+<h2>Other Useful Tips</h2>
+<ul>
+    <li><strong>TalkBack Tutorial:</strong> Settings > Accessibility > TalkBack > Settings > Launch tutorial.</li>
+    <li><strong>TalkBack Braille Keyboard:</strong> Available under TalkBack Settings if needed.</li>
+</ul>
+
+<p><strong>Full TalkBack Guide:</strong> <a href="https://support.google.com/accessibility/android/answer/6283677" target="_blank">Official Google TalkBack Help</a></p>
+  <script>
+    // Load Global Header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-header').innerHTML = data;
+      });
+
+    // Load Global Footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-footer').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VoiceOver on macOS Quick Start Guide</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 20px;
+        line-height: 1.6;
+    }
+    h1, h2 {
+        color: #2c3e50;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+
+<h1>VoiceOver on macOS Quick Start Guide</h1>
+<p>Updated for macOS Ventura and Sonoma versions (2023–2024). Focused on web navigation and daily testing needs.</p>
+
+<h2>Starting and Stopping VoiceOver</h2>
+<ul>
+    <li><strong>Start VoiceOver:</strong> Command + F5 (or Touch ID button triple-press on newer Macs)</li>
+    <li><strong>Turn Off VoiceOver:</strong> Command + F5 again</li>
+</ul>
+
+<h2>VoiceOver Basics</h2>
+<ul>
+    <li><strong>VoiceOver Modifier Key:</strong> Control + Option (VO Key)</li>
+    <li><strong>Stop Speaking:</strong> Control</li>
+    <li><strong>Read All From Current Position:</strong> VO + A</li>
+</ul>
+
+<h2>Basic Navigation</h2>
+<ul>
+    <li><strong>Move to Next Item:</strong> VO + Right Arrow</li>
+    <li><strong>Move to Previous Item:</strong> VO + Left Arrow</li>
+    <li><strong>Activate Selected Item:</strong> VO + Spacebar</li>
+</ul>
+
+<h2>Web Navigation Shortcuts</h2>
+<ul>
+    <li><strong>Next Heading:</strong> VO + Command + H</li>
+    <li><strong>Next Link:</strong> VO + Command + L</li>
+    <li><strong>Next Form Control:</strong> VO + Command + J</li>
+    <li><strong>Next Table:</strong> VO + Command + T</li>
+    <li><strong>Next Landmark/Region:</strong> VO + Command + R</li>
+    <li><strong>Next Button:</strong> VO + Command + B</li>
+</ul>
+
+<h2>Rotor (Quick Navigation Menu)</h2>
+<ul>
+    <li><strong>Open Rotor:</strong> VO + U</li>
+    <li><strong>Use Rotor to quickly jump by Headings, Links, Form Fields, Landmarks, etc.</strong></li>
+</ul>
+
+<h2>Forms Interaction</h2>
+<ul>
+    <li><strong>Interact with Form Field:</strong> VO + Shift + Down Arrow</li>
+    <li><strong>Stop Interacting:</strong> VO + Shift + Up Arrow</li>
+</ul>
+
+<h2>Table Navigation</h2>
+<ul>
+    <li><strong>Move Across Table Cells:</strong> Interact first (VO + Shift + Down Arrow), then VO + Arrow Keys</li>
+    <li><strong>Read Current Cell:</strong> VO + C</li>
+</ul>
+
+<h2>Other Useful Commands</h2>
+<ul>
+    <li><strong>Read Current Item:</strong> VO + F3</li>
+    <li><strong>Open VoiceOver Help Menu:</strong> VO + H</li>
+    <li><strong>Mute/Unmute Speech:</strong> VO + Shift + S</li>
+</ul>
+
+<p><strong>Full VoiceOver Guide:</strong> <a href="https://support.apple.com/guide/voiceover/welcome/mac" target="_blank">Official Apple VoiceOver User Guide</a></p>
+  <script>
+    // Load Global Header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-header').innerHTML = data;
+      });
+
+    // Load Global Footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-footer').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NVDA Screen Reader Quick Start Guide</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 20px;
+        line-height: 1.6;
+    }
+    h1, h2 {
+        color: #2c3e50;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+
+<h1>NVDA Screen Reader Quick Start Guide</h1>
+<p>Updated for modern web navigation and testing practices. Based on NV Access official documentation and Deque guidelines.</p>
+
+<h2>Starting and Stopping NVDA</h2>
+<ul>
+    <li><strong>Start NVDA:</strong> Ctrl + Alt + N (default if installed) or from Start Menu.</li>
+    <li><strong>Exit NVDA:</strong> NVDA key + Q, then Enter.</li>
+</ul>
+
+<h2>Basic Navigation</h2>
+<ul>
+    <li><strong>Stop speech:</strong> Control</li>
+    <li><strong>Read continuously from here:</strong> NVDA key + Down Arrow</li>
+    <li><strong>Move to next item:</strong> Down Arrow</li>
+    <li><strong>Move to previous item:</strong> Up Arrow</li>
+    <li><strong>Activate link/button:</strong> Enter or Spacebar</li>
+</ul>
+
+<h2>Navigating by Page Elements</h2>
+<ul>
+    <li><strong>Next Heading:</strong> H</li>
+    <li><strong>Next Heading of Level 1–6:</strong> Press 1–6</li>
+    <li><strong>Next Link:</strong> K</li>
+    <li><strong>Next Button:</strong> B</li>
+    <li><strong>Next Form Field:</strong> F</li>
+    <li><strong>Next List:</strong> L</li>
+    <li><strong>Next Landmark/Region:</strong> D</li>
+</ul>
+
+<h2>Working with Forms</h2>
+<ul>
+    <li><strong>Enter Forms/Focus Mode:</strong> Automatic when entering form fields</li>
+    <li><strong>Manual Focus Mode:</strong> NVDA key + Spacebar (toggle)</li>
+    <li><strong>Next Checkbox:</strong> X</li>
+    <li><strong>Select/Deselect Checkbox:</strong> Spacebar</li>
+    <li><strong>Next Combo Box:</strong> C</li>
+    <li><strong>Open Combo Box:</strong> Alt + Down Arrow</li>
+</ul>
+
+<h2>Table Navigation</h2>
+<ul>
+    <li><strong>Next Table:</strong> T</li>
+    <li><strong>Move Right/Left:</strong> Ctrl + Alt + Right/Left Arrow</li>
+    <li><strong>Move Down/Up:</strong> Ctrl + Alt + Down/Up Arrow</li>
+    <li><strong>Say Current Cell:</strong> NVDA key + C</li>
+</ul>
+
+<h2>Other Useful Commands</h2>
+<ul>
+    <li><strong>List All Elements (Links, Headings, Form Fields):</strong> NVDA key + F7</li>
+    <li><strong>Toggle Browse/Focus Mode:</strong> NVDA key + Spacebar</li>
+    <li><strong>Toggle Speech Mode (mute NVDA quickly):</strong> NVDA key + S</li>
+</ul>
+
+<p><strong>Full List of Commands:</strong> <a href="https://www.nvaccess.org/files/nvda/documentation/userGuide.html#UsefulKeyboardCommands" target="_blank">NVDA Official User Guide</a></p>
+  <script>
+    // Load Global Header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-header').innerHTML = data;
+      });
+
+    // Load Global Footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-footer').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

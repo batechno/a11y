@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Narrator Quick Start Guide</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 20px;
+        line-height: 1.6;
+    }
+    h1, h2 {
+        color: #2c3e50;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Narrator Quick Start Guide</h1>
+<p>Updated for Windows 11 (2023–2024). Focused on basic screen reader usage for Windows users.</p>
+
+<h2>Turning Narrator On/Off</h2>
+<ul>
+    <li><strong>Start Narrator:</strong> Ctrl + Windows Logo Key + Enter</li>
+    <li><strong>Turn Off Narrator:</strong> Press the same keys again or Exit from Narrator settings.</li>
+</ul>
+
+<h2>Basic Navigation</h2>
+<ul>
+    <li><strong>Read All (from current location):</strong> Narrator Key + Down Arrow</li>
+    <li><strong>Stop Speaking:</strong> Control</li>
+    <li><strong>Move to Next Item:</strong> Tab</li>
+    <li><strong>Move to Previous Item:</strong> Shift + Tab</li>
+    <li><strong>Activate Link or Button:</strong> Enter or Spacebar</li>
+</ul>
+
+<h2>Navigating by Elements</h2>
+<ul>
+    <li><strong>Next Heading:</strong> H</li>
+    <li><strong>Next Link:</strong> K</li>
+    <li><strong>Next Button:</strong> B</li>
+    <li><strong>Next Form Field:</strong> F</li>
+    <li><strong>Next Table:</strong> T</li>
+</ul>
+
+<h2>Forms Mode (Scan Mode)</h2>
+<ul>
+    <li><strong>Toggle Scan Mode On/Off:</strong> Narrator Key + Spacebar</li>
+    <li><strong>While Scan Mode is On:</strong> Use arrow keys to move and activate elements easily.</li>
+</ul>
+
+<h2>Other Useful Commands</h2>
+<ul>
+    <li><strong>List Links, Headings, Landmarks:</strong> Narrator Key + F6</li>
+    <li><strong>Open Narrator Settings:</strong> Narrator Key + Ctrl + N</li>
+    <li><strong>Change Voice Speed:</strong> Narrator Key + Plus (+) or Minus (–)</li>
+</ul>
+
+<p><strong>Full Narrator Guide:</strong> <a href="https://support.microsoft.com/en-us/windows/get-started-with-narrator-4f02d7c6-bdc7-0492-cd45-c236c701d2f4" target="_blank">Official Microsoft Narrator Guide</a></p>
+  <script>
+    // Load Global Header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-header').innerHTML = data;
+      });
+
+    // Load Global Footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-footer').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

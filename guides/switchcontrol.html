@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Switch Control Quick Start Guide</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 20px;
+        line-height: 1.6;
+    }
+    h1, h2 {
+        color: #2c3e50;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Switch Control Quick Start Guide</h1>
+<p>Updated for iOS 17 and macOS Sonoma (2024). Designed for users needing alternative input methods with switches.</p>
+
+<h2>Turning Switch Control On/Off</h2>
+<ul>
+    <li><strong>On iPhone/iPad:</strong> Settings > Accessibility > Switch Control > Turn On.</li>
+    <li><strong>On Mac:</strong> System Settings > Accessibility > Switch Control > Turn On.</li>
+    <li><strong>Quick Toggle (iOS):</strong> Triple-click Side or Home button (if configured).</li>
+</ul>
+
+<h2>Setting Up Switches</h2>
+<ul>
+    <li><strong>Add Switch:</strong> Settings > Accessibility > Switch Control > Switches > Add New Switch.</li>
+    <li><strong>Switch Source:</strong> External (Bluetooth switch, USB device) or Screen tap.</li>
+    <li><strong>Assign Actions:</strong> Choose actions like Select, Move to Next Item, Back, etc.</li>
+</ul>
+
+<h2>Basic Navigation</h2>
+<ul>
+    <li><strong>Item Scanning:</strong> Items are highlighted automatically.</li>
+    <li><strong>Select Highlighted Item:</strong> Activate primary switch when the desired item is highlighted.</li>
+    <li><strong>Move to Next Item:</strong> Press switch if manually configured for Next Item.</li>
+</ul>
+
+<h2>Point Scanning (Advanced)</h2>
+<ul>
+    <li><strong>Horizontal and Vertical Crosshairs:</strong> Tap switch to lock position and select coordinates.</li>
+    <li><strong>Useful for:</strong> Touching anywhere on the screen that's not part of a UI element.</li>
+</ul>
+
+<h2>Customizing Switch Control</h2>
+<ul>
+    <li><strong>Auto Scanning Speed:</strong> Adjust timing under Switch Control settings.</li>
+    <li><strong>Group Items:</strong> Enable/Disable group item scanning for efficiency.</li>
+    <li><strong>Customize Menu:</strong> Add actions like Scroll, Gestures, Home, Back, App Switcher, etc.</li>
+</ul>
+
+<h2>Other Useful Tips</h2>
+<ul>
+    <li><strong>Recipes:</strong> Create custom gesture sequences triggered by switch presses.</li>
+    <li><strong>Switch Control Practice:</strong> Settings > Accessibility > Switch Control > Practice to learn safely without actions triggering.</li>
+</ul>
+
+<p><strong>Full Switch Control Guide:</strong> <a href="https://support.apple.com/guide/iphone/use-switch-control-to-navigate-iph3e2e415f/ios" target="_blank">Official Apple Switch Control Guide</a></p>
+  <script>
+    // Load Global Header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-header').innerHTML = data;
+      });
+
+    // Load Global Footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-footer').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>
