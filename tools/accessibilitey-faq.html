@@ -1,72 +1,126 @@
-import React, { useState } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Accessibility FAQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../styles.css" rel="stylesheet" />
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const faqButtons = document.querySelectorAll(".faq-button");
 
-export default function AccessibilityFAQ() {
-  const [openQuestion, setOpenQuestion] = useState(null);
+      faqButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          const expanded = button.getAttribute("aria-expanded") === "true";
+          faqButtons.forEach((btn) => {
+            btn.setAttribute("aria-expanded", "false");
+            const contentId = btn.getAttribute("aria-controls");
+            document.getElementById(contentId).hidden = true;
+          });
+          button.setAttribute("aria-expanded", String(!expanded));
+          const contentId = button.getAttribute("aria-controls");
+          document.getElementById(contentId).hidden = expanded;
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <a href="#mainContent" class="sr-only focus:not-sr-only">Skip to main content</a>
 
-  const faqs = [
-    {
-      question: "Why do we care about accessibility in the digital world (web and mobile)?",
-      answer: "Accessibility ensures that everyone, including people with disabilities, can perceive, understand, navigate, and interact with digital content. It promotes equal access, inclusion, and is often legally required (e.g., ADA, WCAG standards)."
-    },
-    {
-      question: "What are the major types of disabilities that impact digital access?",
-      answer: "The main categories are: visual (blindness, low vision, color blindness), auditory (deafness, hard of hearing), motor/mobility (difficulty with fine motor control), cognitive (learning disabilities, memory issues), and speech disabilities."
-    },
-    {
-      question: "What is Assistive Technology (AT)?",
-      answer: "Assistive Technology (AT) refers to software or hardware tools that help people with disabilities interact with computers and mobile devices. Examples include screen readers, magnifiers, voice input tools, and switch devices."
-    },
-    {
-      question: "What is a screen reader?",
-      answer: "A screen reader is software that reads digital text aloud. It helps blind and visually impaired users navigate websites, applications, and mobile devices by converting on-screen information into synthesized speech or braille."
-    },
-    {
-      question: "How does a screen reader work?",
-      answer: "Screen readers interpret the content of a page by reading the structure (headings, links, buttons, tables, etc.) and any available alternative text for images. Users navigate using keyboard shortcuts to jump between elements like headings, form fields, and links."
-    },
-    {
-      question: "What are other examples of Assistive Technologies?",
-      answer: "Other examples include screen magnifiers (for low vision), voice recognition software (for hands-free use), switch devices (for users with limited mobility), and refreshable braille displays."
-    },
-    {
-      question: "How can we make digital content accessible?",
-      answer: "Use semantic HTML (correct heading order, buttons, and links), provide alternative text for images, ensure sufficient color contrast, support keyboard navigation, create descriptive link text, and test content with screen readers and other AT."
-    }
-  ];
+  <header class="bg-gray-800 text-white p-4">
+    <h1 class="text-center text-2xl font-bold">Accessibility Resources Portal</h1>
+  </header>
 
-  const toggleQuestion = (index) => {
-    setOpenQuestion(openQuestion === index ? null : index);
-  };
+  <nav class="bg-gray-100 p-6">
+    <h2 class="text-xl font-semibold mb-4">Navigation</h2>
+    <ul class="space-y-2">
+      <li><a href="../index.html" class="text-blue-600 underline">Home</a></li>
+      <li><a href="../checklists/index.html" class="text-blue-600 underline">Checklists</a></li>
+      <li><a href="../quick-guides/index.html" class="text-blue-600 underline">Quick Start Guides</a></li>
+      <li><a href="../tools/index.html" class="text-blue-600 underline">Tools</a></li>
+    </ul>
+  </nav>
 
-  return (
-    <main className="p-6 max-w-3xl mx-auto space-y-6">
-      <h1 className="text-3xl font-bold">Accessibility FAQ</h1>
+  <main id="mainContent" class="p-6 max-w-3xl mx-auto space-y-6">
+    <h1 class="text-3xl font-bold">Accessibility FAQ</h1>
 
-      <section>
-        {faqs.map((faq, index) => (
-          <div key={index} className="border rounded mb-4">
-            <button
-              className="w-full text-left p-4 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              aria-expanded={openQuestion === index}
-              aria-controls={`faq-${index}`}
-              id={`faq-button-${index}`}
-              onClick={() => toggleQuestion(index)}
-            >
-              <span className="font-semibold">{faq.question}</span>
-            </button>
-            {openQuestion === index && (
-              <div
-                id={`faq-${index}`}
-                role="region"
-                aria-labelledby={`faq-button-${index}`}
-                className="p-4"
-              >
-                {faq.answer}
-              </div>
-            )}
-          </div>
-        ))}
-      </section>
-    </main>
-  );
-}
+    <section>
+      <div class="border rounded mb-4">
+        <button class="faq-button w-full text-left p-4 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          aria-expanded="false" aria-controls="faq-0" id="faq-button-0">
+          <span class="font-semibold">Why do we care about accessibility in the digital world (web and mobile)?</span>
+        </button>
+        <div id="faq-0" role="region" aria-labelledby="faq-button-0" hidden class="p-4">
+          Accessibility ensures that everyone, including people with disabilities, can perceive, understand, navigate, and interact with digital content. It promotes equal access, inclusion, and is often legally required (e.g., ADA, WCAG standards).
+        </div>
+      </div>
+
+      <div class="border rounded mb-4">
+        <button class="faq-button w-full text-left p-4 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          aria-expanded="false" aria-controls="faq-1" id="faq-button-1">
+          <span class="font-semibold">What are the major types of disabilities that impact digital access?</span>
+        </button>
+        <div id="faq-1" role="region" aria-labelledby="faq-button-1" hidden class="p-4">
+          The main categories are: visual (blindness, low vision, color blindness), auditory (deafness, hard of hearing), motor/mobility (difficulty with fine motor control), cognitive (learning disabilities, memory issues), and speech disabilities.
+        </div>
+      </div>
+
+      <div class="border rounded mb-4">
+        <button class="faq-button w-full text-left p-4 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          aria-expanded="false" aria-controls="faq-2" id="faq-button-2">
+          <span class="font-semibold">What is Assistive Technology (AT)?</span>
+        </button>
+        <div id="faq-2" role="region" aria-labelledby="faq-button-2" hidden class="p-4">
+          Assistive Technology (AT) refers to software or hardware tools that help people with disabilities interact with computers and mobile devices. Examples include screen readers, magnifiers, voice input tools, and switch devices.
+        </div>
+      </div>
+
+      <div class="border rounded mb-4">
+        <button class="faq-button w-full text-left p-4 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          aria-expanded="false" aria-controls="faq-3" id="faq-button-3">
+          <span class="font-semibold">What is a screen reader?</span>
+        </button>
+        <div id="faq-3" role="region" aria-labelledby="faq-button-3" hidden class="p-4">
+          A screen reader is software that reads digital text aloud. It helps blind and visually impaired users navigate websites, applications, and mobile devices by converting on-screen information into synthesized speech or braille.
+        </div>
+      </div>
+
+      <div class="border rounded mb-4">
+        <button class="faq-button w-full text-left p-4 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          aria-expanded="false" aria-controls="faq-4" id="faq-button-4">
+          <span class="font-semibold">How does a screen reader work?</span>
+        </button>
+        <div id="faq-4" role="region" aria-labelledby="faq-button-4" hidden class="p-4">
+          Screen readers interpret the content of a page by reading the structure (headings, links, buttons, tables, etc.) and any available alternative text for images. Users navigate using keyboard shortcuts to jump between elements like headings, form fields, and links.
+        </div>
+      </div>
+
+      <div class="border rounded mb-4">
+        <button class="faq-button w-full text-left p-4 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          aria-expanded="false" aria-controls="faq-5" id="faq-button-5">
+          <span class="font-semibold">What are other examples of Assistive Technologies?</span>
+        </button>
+        <div id="faq-5" role="region" aria-labelledby="faq-button-5" hidden class="p-4">
+          Other examples include screen magnifiers (for low vision), voice recognition software (for hands-free use), switch devices (for users with limited mobility), and refreshable braille displays.
+        </div>
+      </div>
+
+      <div class="border rounded mb-4">
+        <button class="faq-button w-full text-left p-4 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          aria-expanded="false" aria-controls="faq-6" id="faq-button-6">
+          <span class="font-semibold">How can we make digital content accessible?</span>
+        </button>
+        <div id="faq-6" role="region" aria-labelledby="faq-button-6" hidden class="p-4">
+          Use semantic HTML (correct heading order, buttons, and links), provide alternative text for images, ensure sufficient color contrast, support keyboard navigation, create descriptive link text, and test content with screen readers and other AT.
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="bg-gray-200 text-center p-4 mt-10">
+    <p>&copy; 2025 Accessibility Resources Portal. All rights reserved.</p>
+  </footer>
+</body>
+</html>
