@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Accessible Web Elements Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* TailwindCSS-like styles manually for basic look */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+    .focus\:not-sr-only:focus { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto; }
+    .p-2 { padding: 0.5rem; }
+    .p-4 { padding: 1rem; }
+    .mt-2 { margin-top: 0.5rem; }
+    .mt-4 { margin-top: 1rem; }
+    .text-3xl { font-size: 1.875rem; font-weight: bold; }
+    .text-2xl { font-size: 1.5rem; font-weight: bold; }
+    .text-lg { font-size: 1.125rem; }
+    .border { border: 1px solid #ccc; }
+    .rounded { border-radius: 0.25rem; }
+    .bg-red-100 { background-color: #fee2e2; }
+    .text-red-700 { color: #b91c1c; }
+    .bg-gray-200 { background-color: #e5e7eb; }
+    .bg-gray-700 { background-color: #374151; color: white; }
+    .bg-gray-300 { background-color: #d1d5db; color: #6b7280; }
+    .focus\:ring-2:focus { outline: 2px solid #3b82f6; }
+    .underline { text-decoration: underline; }
+    .text-blue-600 { color: #2563eb; }
+    .flex { display: flex; }
+    .space-x-4 > * + * { margin-left: 1rem; }
+    .hidden { display: none; }
+    .block { display: block; }
+    .max-w-md { max-width: 28rem; }
+  </style>
+</head>
+<body>
+
+<div aria-live="polite" class="sr-only" id="global-live-region"></div>
+<a href="#main-content" class="sr-only focus:not-sr-only">Skip to Main Content</a>
+
+<main id="main-content" class="p-6" role="document" lang="en">
+  
+  <div id="error-message" role="alert" class="bg-red-100 border text-red-700 p-4 rounded">
+    <strong>Error: </strong> <span>Example error: Please select a date before proceeding.</span>
+  </div>
+
+  <h1 class="text-3xl">Accessible Web Elements Example</h1>
+
+  <img src="https://via.placeholder.com/150" alt="" aria-hidden="true" />
+
+  <section>
+    <h2 class="text-2xl">Standard Accessible Elements</h2>
+    <button class="p-2 mt-2 border rounded focus:ring-2" onclick="alert('Button Clicked!')">Accessible Button</button>
+
+    <p class="mt-4">
+      <a href="#" class="text-blue-600 underline focus:ring-2">Accessible Link</a>
+    </p>
+
+    <fieldset class="mt-4">
+      <legend class="font-semibold">Choose a Fruit:</legend>
+      <label class="block">
+        <input type="radio" name="fruit" value="apple" class="mr-2" /> Apple
+      </label>
+      <label class="block">
+        <input type="radio" name="fruit" value="orange" class="mr-2" /> Orange
+      </label>
+    </fieldset>
+
+    <fieldset class="mt-4">
+      <legend class="font-semibold">Choose your Interests:</legend>
+      <label class="block">
+        <input type="checkbox" name="interest" value="coding" class="mr-2" /> Coding
+      </label>
+      <label class="block">
+        <input type="checkbox" name="interest" value="music" class="mr-2" /> Music
+      </label>
+    </fieldset>
+
+    <table class="mt-6 border w-full">
+      <caption class="text-left font-semibold mb-2">Sample Data Table</caption>
+      <thead class="bg-gray-200">
+        <tr>
+          <th scope="col" class="border p-2">Name</th>
+          <th scope="col" class="border p-2">Age</th>
+          <th scope="col" class="border p-2">City</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border p-2">John Doe</td>
+          <td class="border p-2">30</td>
+          <td class="border p-2">New York</td>
+        </tr>
+        <tr>
+          <td class="border p-2">Jane Smith</td>
+          <td class="border p-2">25</td>
+          <td class="border p-2">Los Angeles</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <label for="country" class="block mt-4 font-medium">Select a Country:</label>
+    <select id="country" name="country" class="border p-2 mt-1 w-full focus:ring-2">
+      <option value="">--Please choose an option--</option>
+      <option value="usa">USA</option>
+      <option value="canada">Canada</option>
+      <option value="mexico">Mexico</option>
+    </select>
+  </section>
+
+  <!-- Accessible Tabs -->
+  <section class="mt-6">
+    <h2 class="text-2xl">Accessible Tabs</h2>
+    <div role="tablist" aria-label="Sample Tabs" class="flex space-x-4">
+      <button role="tab" id="tab-0" aria-selected="true" aria-controls="tabpanel-0" class="p-2 border-b-2 focus:ring-2" onclick="activateTab(0)">Tab 1</button>
+      <button role="tab" id="tab-1" aria-selected="false" aria-controls="tabpanel-1" class="p-2 border-b-2 focus:ring-2" onclick="activateTab(1)">Tab 2</button>
+      <button role="tab" id="tab-2" aria-selected="false" aria-controls="tabpanel-2" class="p-2 border-b-2 focus:ring-2" onclick="activateTab(2)">Tab 3</button>
+    </div>
+
+    <div id="tabpanel-0" role="tabpanel" aria-labelledby="tab-0" class="mt-4">Content for Tab 1</div>
+    <div id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1" class="mt-4 hidden">Content for Tab 2</div>
+    <div id="tabpanel-2" role="tabpanel" aria-labelledby="tab-2" class="mt-4 hidden">Content for Tab 3</div>
+  </section>
+
+  <!-- Accessible Date Picker -->
+  <section class="mt-6" aria-labelledby="datepicker-label">
+    <h2 id="datepicker-label" class="text-2xl">Accessible Date Picker (Input)</h2>
+    <div class="border rounded p-4 max-w-md">
+      <label for="datepicker" class="block text-lg font-medium mb-2">Select a date:</label>
+      <input type="date" id="datepicker" class="border p-2 w-full" onchange="clearError()" />
+      <p class="mt-2 text-sm text-gray-600">
+        Use arrow keys to select dates.
+      </p>
+    </div>
+  </section>
+
+  <!-- Color Contrast -->
+  <section class="mt-6">
+    <h2 class="text-2xl">Color Contrast Examples</h2>
+    <div class="flex flex-col gap-4 max-w-md">
+      <div class="bg-gray-700 p-4 rounded">
+        <p>Good Contrast (4.5:1 and above) - Example Text</p>
+      </div>
+      <div class="bg-gray-300 p-4 rounded">
+        <p>Poor Contrast (less than 4.5:1) - Example Text</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  function activateTab(index) {
+    for (let i = 0; i < 3; i++) {
+      document.getElementById(`tab-${i}`).setAttribute('aria-selected', i === index);
+      document.getElementById(`tabpanel-${i}`).classList.toggle('hidden', i !== index);
+    }
+  }
+
+  function clearError() {
+    const dateValue = document.getElementById('datepicker').value;
+    if (dateValue) {
+      document.getElementById('error-message').style.display = 'none';
+      document.getElementById('global-live-region').innerText = 'Date selected: ' + dateValue;
+    }
+  }
+</script>
+
+</body>
+</html>
