@@ -114,9 +114,8 @@
     <input type="radio" id="q13-yes" name="q13" value="yes"><label for="q13-yes">Yes</label>
     <input type="radio" id="q13-no" name="q13" value="no"><label for="q13-no">No</label>
   </fieldset>
-
-  <button type="button" onclick="checkCompliance()">Check Compliance</button>
-</form>
+<button type="submit" onclick="checkCompliance()">Check Compliance</button>
+                                                                    </form>
 
 <div id="progressBarContainer">
   <div id="progressBar">0%</div>
@@ -170,10 +169,6 @@ function checkCompliance() {
 
   document.getElementById('complianceResult').value = complianceLevel;
 
-  // Auto-submit the form
-  setTimeout(() => {
-    form.submit();
-  }, 1000);
 }
 
 function announceSkip() {
