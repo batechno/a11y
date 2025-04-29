@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QA Tester Accessibility Checklist - WCAG 2.2 AA (Updated)</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 20px;
+        line-height: 1.6;
+    }
+    h1, h2, h3 {
+        color: #2c3e50;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    .section summary {
+        font-weight: bold;
+        font-size: 1.2em;
+        cursor: pointer;
+        background: #e0e0e0;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+    input[type="checkbox"] {
+        margin-right: 10px;
+    }
+</style>
+</head>
+<body>
+
+<h1>QA Tester Accessibility Checklist</h1>
+<p>Based on WCAG 2.2 AA - Updated and Enhanced for Manual Testing</p>
+
+<details class="section">
+<summary>Global Testing Requirements</summary>
+<label><input type="checkbox"> Page is navigable with keyboard only.</label>
+<label><input type="checkbox"> Logical tab order is maintained.</label>
+<label><input type="checkbox"> Visible focus on interactive elements.</label>
+<label><input type="checkbox"> No keyboard traps encountered.</label>
+<label><input type="checkbox"> Correct ARIA landmarks are used (header, nav, main, footer).</label>
+</details>
+
+<details class="section">
+<summary>Keyboard Navigation</summary>
+<label><input type="checkbox"> All actionable items reachable by Tab key.</label>
+<label><input type="checkbox"> Enter or Space triggers buttons/links.</label>
+<label><input type="checkbox"> Escape closes modals/dialogs if open.</label>
+<label><input type="checkbox"> Focus moves logically without skipping elements.</label>
+<label><input type="checkbox"> Focus can reach all lazy-loaded or dynamically loaded content.</label>
+</details>
+
+<details class="section">
+<summary>Screen Reader Basic Checks</summary>
+<label><input type="checkbox"> Logical reading order is maintained.</label>
+<label><input type="checkbox"> Headings follow a logical hierarchy (h1, h2, h3, etc.).</label>
+<label><input type="checkbox"> Buttons, links, and form fields announced correctly.</label>
+</details>
+
+<details class="section">
+<summary>Forms (Inputs, Errors, Radios, Checkboxes, Dropdowns)</summary>
+<label><input type="checkbox"> Each input field has an associated label.</label>
+<label><input type="checkbox"> Required fields are indicated properly.</label>
+<label><input type="checkbox"> Error messages announced and linked to fields correctly.</label>
+<label><input type="checkbox"> Radio buttons and checkboxes grouped logically and labeled.</label>
+<label><input type="checkbox"> Dropdown lists (select menus) are keyboard operable.</label>
+</details>
+
+<details class="section">
+<summary>Dynamic Content</summary>
+<label><input type="checkbox"> Dynamic changes (alerts, status messages) are announced to screen reader users using ARIA live regions.</label>
+<label><input type="checkbox"> Page updates without full reload properly inform assistive technology users.</label>
+</details>
+
+<details class="section">
+<summary>Links and Buttons</summary>
+<label><input type="checkbox"> Link text is meaningful without surrounding context.</label>
+<label><input type="checkbox"> Buttons describe their action clearly.</label>
+<label><input type="checkbox"> No empty links or buttons.</label>
+</details>
+
+<details class="section">
+<summary>Images</summary>
+<label><input type="checkbox"> Informative images have meaningful alt text.</label>
+<label><input type="checkbox"> Decorative images have empty alt attributes.</label>
+<label><input type="checkbox"> Complex images (like charts) have extended descriptions if needed.</label>
+</details>
+
+<details class="section">
+<summary>Tables</summary>
+<label><input type="checkbox"> Table headers are identified correctly.</label>
+<label><input type="checkbox"> Table structure read logically by screen readers.</label>
+</details>
+
+<details class="section">
+<summary>Dialogs/Modals</summary>
+<label><input type="checkbox"> Focus is trapped inside modal while open.</label>
+<label><input type="checkbox"> Escape key closes modal dialog.</label>
+<label><input type="checkbox"> Modal dialog properly announced by screen reader.</label>
+</details>
+
+<details class="section">
+<summary>Carousels and Slideshows</summary>
+<label><input type="checkbox"> Carousel controls (Pause, Next, Previous) are keyboard accessible.</label>
+<label><input type="checkbox"> Auto-playing content can be paused or stopped.</label>
+</details>
+
+<details class="section">
+<summary>Accordions and Tabs</summary>
+<label><input type="checkbox"> Arrow keys navigate between tabs correctly.</label>
+<label><input type="checkbox"> Expanded/collapsed state is correctly announced.</label>
+</details>
+
+<details class="section">
+<summary>Navigation Menus</summary>
+<label><input type="checkbox"> Menus are fully keyboard and screen reader accessible.</label>
+<label><input type="checkbox"> Current page visually and programmatically indicated (aria-current).</label>
+</details>
+
+<details class="section">
+<summary>Color Contrast</summary>
+<label><input type="checkbox"> Text contrast minimum 4.5:1 against background.</label>
+<label><input type="checkbox"> Focus indicators have sufficient contrast to be visible.</label>
+</details>
+
+<details class="section">
+<summary>Mobile-Specific Testing</summary>
+<label><input type="checkbox"> Touch targets are sufficiently large (at least 44x44px).</label>
+<label><input type="checkbox"> No critical functionality hidden when zoomed or rotated.</label>
+<label><input type="checkbox"> Mobile screen readers (VoiceOver/TalkBack) can access all elements correctly.</label>
+</details>
+
+<details class="section">
+<summary>Zoom/Reflow Testing</summary>
+<label><input type="checkbox"> Content readable and usable at 200% zoom.</label>
+<label><input type="checkbox"> No horizontal scroll needed at 320px width unless unavoidable.</label>
+</details>
+
+<details class="section">
+<summary>SPA (Single Page Applications) Behavior</summary>
+<label><input type="checkbox"> Page changes dynamically announce new content when navigation occurs.</label>
+<label><input type="checkbox"> Focus remains logical after navigation within SPA.</label>
+</details>
+  <script>
+    // Load Global Header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-header').innerHTML = data;
+      });
+
+    // Load Global Footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-footer').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

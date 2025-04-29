@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Manager Accessibility Checklist - WCAG 2.2 AA (Updated)</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 20px;
+        line-height: 1.6;
+    }
+    h1, h2, h3 {
+        color: #2c3e50;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    .section summary {
+        font-weight: bold;
+        font-size: 1.2em;
+        cursor: pointer;
+        background: #e0e0e0;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+    input[type="checkbox"] {
+        margin-right: 10px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Project Manager Accessibility Checklist</h1>
+<p>Based on WCAG 2.2 AA - Updated and Enhanced for Project Oversight</p>
+
+<details class="section">
+<summary>Project Planning</summary>
+<label><input type="checkbox"> Accessibility requirements documented in project scope.</label>
+<label><input type="checkbox"> Accessibility included in project timeline and budget.</label>
+<label><input type="checkbox"> Accessibility acceptance criteria defined early.</label>
+<label><input type="checkbox"> Accessibility success metrics identified (e.g., WCAG 2.2 AA compliance).</label>
+</details>
+
+<details class="section">
+<summary>Design and Development Coordination</summary>
+<label><input type="checkbox"> Design team briefed on accessibility guidelines and color contrast standards.</label>
+<label><input type="checkbox"> Developers provided with accessibility requirements and appropriate resources.</label>
+<label><input type="checkbox"> Accessibility built into definition of "done" for all features and user stories.</label>
+</details>
+
+<details class="section">
+<summary>Testing Coordination</summary>
+<label><input type="checkbox"> Accessibility testing scheduled during development, not left to end phase.</label>
+<label><input type="checkbox"> Manual testing with keyboard and screen readers included in QA processes.</label>
+<label><input type="checkbox"> Accessibility issues logged and tracked as regular bugs.</label>
+</details>
+
+<details class="section">
+<summary>Vendor and Third-Party Coordination</summary>
+<label><input type="checkbox"> Third-party vendors required to meet WCAG 2.2 AA compliance in contracts.</label>
+<label><input type="checkbox"> Accessibility checks performed before accepting deliverables from vendors.</label>
+</details>
+
+<details class="section">
+<summary>Delivery and Launch</summary>
+<label><input type="checkbox"> Accessibility checks included in final pre-launch checklist.</label>
+<label><input type="checkbox"> Accessibility statement prepared if product/service requires public declaration.</label>
+<label><input type="checkbox"> Post-launch monitoring plan in place for accessibility regressions.</label>
+<label><input type="checkbox"> Session timeout notifications planned and reviewed for accessibility (e.g., warning users before logout).</label>
+</details>
+
+<details class="section">
+<summary>Communication and Training</summary>
+<label><input type="checkbox"> Team members informed about accessibility goals and expectations.</label>
+<label><input type="checkbox"> Accessibility progress reported regularly to stakeholders.</label>
+<label><input type="checkbox"> Accessibility leads or champions identified within project teams.</label>
+</details>
+
+<details class="section">
+<summary>Risk Management</summary>
+<label><input type="checkbox"> Accessibility risks identified early and documented during risk assessments.</label>
+<label><input type="checkbox"> Remediation plans created for any known accessibility gaps or delays.</label>
+</details>
+  <script>
+    // Load Global Header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-header').innerHTML = data;
+      });
+
+    // Load Global Footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-footer').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

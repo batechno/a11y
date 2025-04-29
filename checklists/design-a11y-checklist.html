@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UX/UI Designer Accessibility Checklist - WCAG 2.2 AA (Updated)</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 20px;
+        line-height: 1.6;
+    }
+    h1, h2, h3 {
+        color: #2c3e50;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    .section summary {
+        font-weight: bold;
+        font-size: 1.2em;
+        cursor: pointer;
+        background: #e0e0e0;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+    input[type="checkbox"] {
+        margin-right: 10px;
+    }
+</style>
+</head>
+<body>
+
+<h1>UX/UI Designer Accessibility Checklist</h1>
+<p>Based on WCAG 2.2 AA - Updated and Enhanced for Visual and UX Design</p>
+
+<details class="section">
+<summary>Color and Contrast</summary>
+<label><input type="checkbox"> Text contrast meets minimum 4.5:1 ratio for normal text, 3:1 for large text.</label>
+<label><input type="checkbox"> Interactive elements (buttons, links) have sufficient contrast from background.</label>
+<label><input type="checkbox"> Color alone is not used to convey meaning.</label>
+</details>
+
+<details class="section">
+<summary>Typography and Text</summary>
+<label><input type="checkbox"> Fonts are easy to read (no overly decorative fonts for body text).</label>
+<label><input type="checkbox"> Line height is at least 1.5 times the font size (for easier readability).</label>
+<label><input type="checkbox"> Paragraph spacing is at least 1.5 times greater than line spacing.</label>
+<label><input type="checkbox"> Avoid full justification (left-align text for better readability).</label>
+<label><input type="checkbox"> Maximum of 80 characters per line (or 40 in CJK languages).</label>
+</details>
+
+<details class="section">
+<summary>Layout and Structure</summary>
+<label><input type="checkbox"> Clear visual hierarchy with consistent heading styles (h1, h2, h3).</label>
+<label><input type="checkbox"> Related elements are visually grouped together logically (e.g., related form fields).</label>
+<label><input type="checkbox"> Use sufficient white space to separate different content areas.</label>
+<label><input type="checkbox"> Important information placed near the top when possible.</label>
+</details>
+
+<details class="section">
+<summary>Navigation Design</summary>
+<label><input type="checkbox"> Navigation menus are consistent across all pages/screens.</label>
+<label><input type="checkbox"> Provide space for a "Skip to main content" link in design mockups.</label>
+</details>
+
+<details class="section">
+<summary>Form Design</summary>
+<label><input type="checkbox"> Each field has a clearly associated visible label.</label>
+<label><input type="checkbox"> Group related fields visually and structurally (e.g., address fields grouped together).</label>
+<label><input type="checkbox"> Error messages appear close to the corresponding field and are noticeable without relying on color only.</label>
+</details>
+
+<details class="section">
+<summary>Touch Target Size</summary>
+<label><input type="checkbox"> Touch targets are at least 44x44px on mobile designs.</label>
+<label><input type="checkbox"> Adequate spacing between interactive elements to avoid accidental taps.</label>
+</details>
+
+<details class="section">
+<summary>Visual Focus States</summary>
+<label><input type="checkbox"> Custom visual focus states are clearly visible (not hidden or faint).</label>
+<label><input type="checkbox"> Focus indicators use more than just color (e.g., borders, underlines).</label>
+</details>
+
+<details class="section">
+<summary>Responsive Design and Reflow</summary>
+<label><input type="checkbox"> Layout adapts well across different screen sizes without losing content or functionality.</label>
+<label><input type="checkbox"> No need for horizontal scrolling at 320px screen width (unless unavoidable).</label>
+</details>
+
+<details class="section">
+<summary>Mobile and Touch UX</summary>
+<label><input type="checkbox"> Designs favor simple, single-finger gestures over complex interactions.</label>
+<label><input type="checkbox"> Critical buttons and actions positioned within natural thumb reach zones.</label>
+</details>
+
+<details class="section">
+<summary>Motion and Animation</summary>
+<label><input type="checkbox"> Auto-playing animations are avoidable or pausable by users.</label>
+<label><input type="checkbox"> Respect user's "Reduce Motion" system settings where applicable.</label>
+</details>
+
+<details class="section">
+<summary>Iconography and Symbols</summary>
+<label><input type="checkbox"> Icons conveying critical meaning have text labels nearby.</label>
+<label><input type="checkbox"> Do not rely on icon color alone to convey status (e.g., success, error).</label>
+</details>
+
+<details class="section">
+<summary>Error Messages and Notifications</summary>
+<label><input type="checkbox"> Error notifications appear next to the relevant field.</label>
+<label><input type="checkbox"> Error states do not rely solely on color (also use text, icons, etc.).</label>
+</details>
+
+<details class="section">
+<summary>Reading and Focus Order</summary>
+<label><input type="checkbox"> Visual reading order matches expected logical and tab order.</label>
+<label><input type="checkbox"> Important navigation items placed first or consistently ordered visually.</label>
+</details>
+
+<details class="section">
+<summary>Consistent Component Usage</summary>
+<label><input type="checkbox"> Components (buttons, links, modals, tabs) behave consistently across designs.</label>
+<label><input type="checkbox"> Standard accessible patterns reused where possible.</label>
+</details>
+  <script>
+    // Load Global Header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-header').innerHTML = data;
+      });
+
+    // Load Global Footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-footer').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Accessibility Checklist - WCAG 2.2 AA (Updated)</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 20px;
+        line-height: 1.6;
+    }
+    h1, h2, h3 {
+        color: #2c3e50;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    .section summary {
+        font-weight: bold;
+        font-size: 1.2em;
+        cursor: pointer;
+        background: #e0e0e0;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+    input[type="checkbox"] {
+        margin-right: 10px;
+    }
+    code, pre {
+        background-color: #eef;
+        padding: 4px 8px;
+        border-radius: 4px;
+        display: inline-block;
+    }
+</style>
+</head>
+<body>
+
+<h1>Developer Accessibility Checklist</h1>
+<p>Based on WCAG 2.2 AA Guidelines - Updated and Enhanced</p>
+
+<details class="section">
+<summary>Global Accessibility Requirements</summary>
+<label><input type="checkbox"> All functionality operable via keyboard alone.</label>
+<label><input type="checkbox"> Logical and intuitive tab order.</label>
+<label><input type="checkbox"> Visible focus on all interactive elements.</label>
+<label><input type="checkbox"> No keyboard traps.</label>
+<label><input type="checkbox"> Correct use of ARIA Landmarks (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>).</label>
+<label><input type="checkbox"> Page has a meaningful <code>&lt;title&gt;</code> and <code>lang</code> attribute.</label>
+</details>
+
+<details class="section">
+<summary>Links</summary>
+<label><input type="checkbox"> Link text is descriptive, not "click here."</label>
+<label><input type="checkbox"> Links are keyboard and screen reader accessible.</label>
+<label><input type="checkbox"> Visible focus state for links.</label>
+</details>
+
+<details class="section">
+<summary>Buttons</summary>
+<label><input type="checkbox"> Buttons have accessible labels (text or aria-label).</label>
+<label><input type="checkbox"> Triggered by Enter or Space keys.</label>
+<label><input type="checkbox"> Focus style is clearly visible.</label>
+</details>
+
+<details class="section">
+<summary>Forms and Inputs</summary>
+<h3>Text Fields</h3>
+<label><input type="checkbox"> Inputs have associated labels.</label>
+<h3>Radio Buttons & Checkboxes</h3>
+<label><input type="checkbox"> Grouped correctly with <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code>.</label>
+<h3>Dropdowns (Selects)</h3>
+<label><input type="checkbox"> Use native <code>&lt;select&gt;</code> elements where possible.</label>
+<h3>Error Handling</h3>
+<label><input type="checkbox"> Errors programmatically linked to fields.</label>
+<label><input type="checkbox"> Error messages clearly visible and meaningful.</label>
+</details>
+
+<details class="section">
+<summary>Images and Non-Text Content</summary>
+<label><input type="checkbox"> Informative images have meaningful <code>alt</code> text.</label>
+<label><input type="checkbox"> Decorative images have empty <code>alt=""</code>.</label>
+<label><input type="checkbox"> Complex images/SVGs have short <code>alt</code> AND extended descriptions.</label>
+</details>
+
+<details class="section">
+<summary>Tables</summary>
+<label><input type="checkbox"> Tables use <code>&lt;th&gt;</code> for headers with correct scope.</label>
+<label><input type="checkbox"> Tables are read logically by screen readers.</label>
+</details>
+
+<details class="section">
+<summary>Navigation Menus</summary>
+<label><input type="checkbox"> Keyboard accessible navigation.</label>
+<label><input type="checkbox"> Current page indicated with <code>aria-current</code> or similar.</label>
+</details>
+
+<details class="section">
+<summary>Accordions & Tabs</summary>
+<label><input type="checkbox"> Accordions are keyboard navigable (Enter/Space, Arrow keys for Tabs).</label>
+<label><input type="checkbox"> State changes (expanded/collapsed) properly announced with <code>aria-expanded</code>.</label>
+</details>
+
+<details class="section">
+<summary>Modals/Dialogs</summary>
+<label><input type="checkbox"> Focus trapped inside modal while open.</label>
+<label><input type="checkbox"> Escape key closes modal.</label>
+<label><input type="checkbox"> Modal labeled properly using <code>role="dialog"</code> and accessible name.</label>
+</details>
+
+<details class="section">
+<summary>Dynamic Content and SPAs</summary>
+<label><input type="checkbox"> Important dynamic updates announced using ARIA Live regions.</label>
+<label><input type="checkbox"> SPA page changes update <code>&lt;title&gt;</code> and notify screen reader users.</label>
+<label><input type="checkbox"> Browser history correctly updated after dynamic navigation (Back button works).</label>
+</details>
+
+<details class="section">
+<summary>Carousels and Slideshows</summary>
+<label><input type="checkbox"> Keyboard operable controls (Pause, Next, Previous).</label>
+<label><input type="checkbox"> Auto-playing slides can be paused or stopped.</label>
+</details>
+
+<details class="section">
+<summary>Frames and Embeds</summary>
+<label><input type="checkbox"> Frames (<code>&lt;iframe&gt;</code>) have descriptive <code>title</code> attributes.</label>
+</details>
+
+<details class="section">
+<summary>Lazy Loading and Infinite Scroll</summary>
+<label><input type="checkbox"> Focus can reach lazy-loaded content without issues.</label>
+<label><input type="checkbox"> Keyboard and screen readers can access all dynamically loaded sections.</label>
+</details>
+
+<details class="section">
+<summary>Color Contrast</summary>
+<label><input type="checkbox"> Text meets minimum 4.5:1 contrast ratio against background.</label>
+<label><input type="checkbox"> Interactive elements have visible focus styles with enough contrast.</label>
+</details>
+
+<details class="section">
+<summary>Zoom and Reflow</summary>
+<label><input type="checkbox"> No horizontal scroll required at 320px screen width.</label>
+<label><input type="checkbox"> Content maintains functionality and meaning at 200% zoom.</label>
+</details>
+
+<details class="section">
+<summary>Mobile-Specific Requirements</summary>
+<label><input type="checkbox"> Touch targets at least 44x44px.</label>
+<label><input type="checkbox"> No hover-dependent interactions without accessible alternatives.</label>
+</details>
+
+<details class="section">
+<summary>ARIA Essentials</summary>
+<label><input type="checkbox"> Native HTML used before ARIA roles when possible.</label>
+<label><input type="checkbox"> Roles, states, and properties updated dynamically if needed.</label>
+<label><input type="checkbox"> ARIA Live regions used wisely to announce important changes.</label>
+</details>
+  <script>
+    // Load Global Header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-header').innerHTML = data;
+      });
+
+    // Load Global Footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-footer').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

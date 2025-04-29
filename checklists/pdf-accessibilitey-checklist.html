@@ -1,0 +1,115 @@
+import React from "react";
+
+export default function PDFAccessibilityChecklist() {
+  return (
+    <main className="flex-1 p-6 max-w-5xl mx-auto space-y-8">
+      <h1 className="text-3xl font-bold">PDF Accessibility Checklist</h1>
+
+      <section>
+        <h2 className="text-2xl font-semibold">1. Why Accessible PDFs Matter</h2>
+        <p className="mt-2">Accessible PDFs ensure that all users, including those using assistive technologies like screen readers, can navigate and understand the document content equally. They are often a legal requirement and promote inclusivity.</p>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold">2. General Rules for PDF Accessibility</h2>
+        <ul className="list-disc pl-6 mt-2 space-y-2">
+          <li>Use proper headings to structure content logically.</li>
+          <li>Provide alternative text for meaningful images.</li>
+          <li>Ensure reading order is logical and matches the visual order.</li>
+          <li>Tag all content properly (headings, paragraphs, lists, tables).</li>
+          <li>Use accessible fonts and maintain sufficient color contrast.</li>
+          <li>Ensure links are descriptive (avoid "click here").</li>
+          <li>Use tables for data only, not for layout.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold">3. Creating Accessible PDFs from Microsoft Word</h2>
+        <ul className="list-disc pl-6 mt-2 space-y-2">
+          <li>Use Word's built-in Styles for headings and lists.</li>
+          <li>Set alternative text for images via the "Alt Text" pane.</li>
+          <li>Use built-in tools for tables with simple structures and headings.</li>
+          <li>Run Word's Accessibility Checker before exporting.</li>
+          <li>Save As PDF using "Best for electronic distribution and accessibility" option.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold">4. Creating Accessible PDFs from Microsoft Excel and PowerPoint</h2>
+        <ul className="list-disc pl-6 mt-2 space-y-2">
+          <li>In Excel, define table headers and avoid merging cells unnecessarily.</li>
+          <li>Use simple tables and clear tab order.</li>
+          <li>In PowerPoint, use built-in layouts rather than text boxes for content.</li>
+          <li>Assign alt text to images and charts in both Excel and PowerPoint.</li>
+          <li>Export using accessible PDF options in Save As.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold">5. Converting Google Docs to Accessible PDF</h2>
+        <ul className="list-disc pl-6 mt-2 space-y-2">
+          <li>Use Styles (Headings 1, 2, etc.) for document structure.</li>
+          <li>Add alt text to images (Right-click → Alt Text).</li>
+          <li>Download as PDF via "File" → "Download" → "PDF Document".</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold">6. Converting HTML to Accessible PDF</h2>
+        <ul className="list-disc pl-6 mt-2 space-y-2">
+          <li>Ensure HTML uses semantic tags correctly (h1-h6, ul, ol, etc.).</li>
+          <li>Use "Print to PDF" options carefully; ensure structure is maintained.</li>
+          <li>Use specialized software if needed to preserve semantics.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold">7. Creating Accessible PDFs Using Adobe Acrobat</h2>
+        <ul className="list-disc pl-6 mt-2 space-y-2">
+          <li>Use "Make Accessible" wizard to auto-tag content.</li>
+          <li>Manually inspect and fix tagging issues (especially tables and forms).</li>
+          <li>Set document properties (Title, Language, etc.).</li>
+          <li>Run "Accessibility Checker" in Acrobat Pro.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold">8. Creating PDFs Using Web APIs</h2>
+        <ul className="list-disc pl-6 mt-2 space-y-2">
+          <li>Use APIs that support tagging (e.g., Adobe PDF Services API).</li>
+          <li>Ensure the API documentation mentions support for accessibility features.</li>
+          <li>Post-process PDFs with tools like Acrobat if needed for manual adjustments.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold">9. Final PDF Accessibility Checklist (Quick Summary)</h2>
+        <ul className="list-disc pl-6 mt-2 space-y-2">
+          <li>Proper heading structure is applied.</li>
+          <li>All images and non-text content have alt text.</li>
+          <li>Reading order matches visual layout.</li>
+          <li>Interactive elements are tagged properly (forms, links).</li>
+          <li>Color contrast is sufficient.</li>
+          <li>Document properties (language, title) are set.</li>
+          <li>Accessibility check has been run and remediations applied.</li>
+        </ul>
+      </section>
+  <script>
+    // Load Global Header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-header').innerHTML = data;
+      });
+
+    // Load Global Footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-footer').innerHTML = data;
+      });
+  </script>
+
+    </main>
+  );
+}
