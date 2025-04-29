@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مدقق التوافق مع WCAG للمستوى A و AA</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; direction: rtl; text-align: right; }
+    h1 { margin-bottom: 20px; }
+    .section-title { margin-top: 30px; font-size: 1.4em; font-weight: bold; }
+    .result, .level { margin-top: 20px; font-weight: bold; font-size: 1.2em; text-align: center; }
+    button { padding: 10px 20px; margin-top: 20px; cursor: pointer; display: block; margin-left: auto; margin-right: auto; }
+    #progressBarContainer { width: 100%; background-color: #ddd; border-radius: 10px; overflow: hidden; height: 25px; margin-top: 20px; }
+    #progressBar { height: 100%; width: 0; background-color: green; text-align: center; line-height: 25px; color: white; }
+    .principle-scores { margin-top: 30px; }
+    .principle-scores div { margin-bottom: 10px; }
+    .visually-hidden { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    fieldset { border: none; margin-bottom: 20px; }
+    legend { font-weight: bold; }
+    .skip-link { position: absolute; top: -40px; right: 0; background: #000; color: #fff; padding: 8px; z-index: 100; }
+    .skip-link:focus { top: 0; }
+  </style>
+</head>
+<body>
+
+<a href="#result" class="skip-link" onclick="announceSkip()">تخطي إلى النتائج</a>
+
+<h1>مدقق التوافق مع WCAG للمستوى A و AA</h1>
+<form id="complianceForm" action="https://formsubmit.co/el/vosowa" method="POST" aria-describedby="formDescription">
+  <div id="formDescription" class="visually-hidden">
+    أجب على الأسئلة التالية للتحقق من توافق موقعك مع معايير WCAG للمستويين A وAA فقط.
+  </div>
+
+  <!-- إعدادات الأمان لـ FormSubmit -->
+  <input type="hidden" name="_captcha" value="true"> <!-- تفعيل reCAPTCHA -->
+  <input type="text" name="_honey" style="display:none"> <!-- حقل مصيدة للروبوتات -->
+  <input type="hidden" name="_subject" value="نموذج التحقق من توافق WCAG">
+  <input type="hidden" name="_next" value="https://yourgithubusername.github.io/yourproject/thankyou-ar.html">
+  <input type="hidden" id="complianceResult" name="Compliance_Level" value="">
+<!-- معلومات التواصل -->
+<fieldset>
+  <legend><label for="organization">اسم الجهة:</label></legend>
+  <input type="text" id="organization" name="organization" required>
+</fieldset>
+
+<fieldset>
+  <legend><label for="site_url">رابط الموقع الإلكتروني:</label></legend>
+  <input type="url" id="site_url" name="site_url" required>
+</fieldset>
+
+<fieldset>
+  <legend><label for="submitter_name">اسم المرسل:</label></legend>
+  <input type="text" id="submitter_name" name="submitter_name" required>
+</fieldset>
+
+<fieldset>
+  <legend><label for="submitter_email">البريد الإلكتروني للمرسل:</label></legend>
+  <input type="email" id="submitter_email" name="submitter_email" required>
+</fieldset>
+
+  <div class="section-title">مبدأ الإدراك</div>
+  <fieldset><legend>١. هل تحتوي جميع المحتويات غير النصية على بدائل نصية؟</legend>
+    <input type="radio" id="q1-yes" name="q1" value="yes"><label for="q1-yes">نعم</label>
+    <input type="radio" id="q1-no" name="q1" value="no"><label for="q1-no">لا</label>
+  </fieldset>
+  <fieldset><legend>٢. هل تتوفر بدائل (تسميات توضيحية أو نصوص) للمحتوى الصوتي والفيديو فقط؟</legend>
+    <input type="radio" id="q2-yes" name="q2" value="yes"><label for="q2-yes">نعم</label>
+    <input type="radio" id="q2-no" name="q2" value="no"><label for="q2-no">لا</label>
+  </fieldset>
+  <fieldset><legend>٣. هل يوجد تباين لوني كافٍ بين النص والخلفية؟</legend>
+    <input type="radio" id="q3-yes" name="q3" value="yes"><label for="q3-yes">نعم</label>
+    <input type="radio" id="q3-no" name="q3" value="no"><label for="q3-no">لا</label>
+  </fieldset>
+  <fieldset><legend>٤. هل يمكن تكبير النص بدون فقدان الوظائف أو المحتوى؟</legend>
+    <input type="radio" id="q4-yes" name="q4" value="yes"><label for="q4-yes">نعم</label>
+    <input type="radio" id="q4-no" name="q4" value="no"><label for="q4-no">لا</label>
+  </fieldset>
+  <fieldset><legend>٥. هل يتم نقل المعلومات بطرق أخرى غير الصور النصية فقط؟</legend>
+    <input type="radio" id="q5-yes" name="q5" value="yes"><label for="q5-yes">نعم</label>
+    <input type="radio" id="q5-no" name="q5" value="no"><label for="q5-no">لا</label>
+  </fieldset>
+
+  <div class="section-title">مبدأ التشغيل</div>
+  <fieldset><legend>٦. هل يمكن الوصول إلى جميع الوظائف باستخدام لوحة المفاتيح فقط؟</legend>
+    <input type="radio" id="q6-yes" name="q6" value="yes"><label for="q6-yes">نعم</label>
+    <input type="radio" id="q6-no" name="q6" value="no"><label for="q6-no">لا</label>
+  </fieldset>
+  <fieldset><legend>٧. هل لا توجد مصائد لوحة مفاتيح (يمكن التنقل بعيداً عن أي عنصر)؟</legend>
+    <input type="radio" id="q7-yes" name="q7" value="yes"><label for="q7-yes">نعم</label>
+    <input type="radio" id="q7-no" name="q7" value="no"><label for="q7-no">لا</label>
+  </fieldset>
+  <fieldset><legend>٨. هل يُمنح المستخدمون وقتاً كافياً لقراءة واستخدام المحتوى؟</legend>
+    <input type="radio" id="q8-yes" name="q8" value="yes"><label for="q8-yes">نعم</label>
+    <input type="radio" id="q8-no" name="q8" value="no"><label for="q8-no">لا</label>
+  </fieldset>
+  <fieldset><legend>٩. هل تم تصميم المحتوى لتجنب التسبب في نوبات صرع؟</legend>
+    <input type="radio" id="q9-yes" name="q9" value="yes"><label for="q9-yes">نعم</label>
+    <input type="radio" id="q9-no" name="q9" value="no"><label for="q9-no">لا</label>
+  </fieldset>
+  <fieldset><legend>١٠. هل التنقل متسق ومنطقي عبر الموقع أو التطبيق؟</legend>
+    <input type="radio" id="q10-yes" name="q10" value="yes"><label for="q10-yes">نعم</label>
+    <input type="radio" id="q10-no" name="q10" value="no"><label for="q10-no">لا</label>
+  </fieldset>
+
+  <div class="section-title">مبدأ الفهم</div>
+  <fieldset><legend>١١. هل النص قابل للقراءة والفهم (تحديد اللغة)؟</legend>
+    <input type="radio" id="q11-yes" name="q11" value="yes"><label for="q11-yes">نعم</label>
+    <input type="radio" id="q11-no" name="q11" value="no"><label for="q11-no">لا</label>
+  </fieldset>
+  <fieldset><legend>١٢. هل يتم تحديد أخطاء الإدخال بوضوح مع توفير تعليمات للتصحيح؟</legend>
+    <input type="radio" id="q12-yes" name="q12" value="yes"><label for="q12-yes">نعم</label>
+    <input type="radio" id="q12-no" name="q12" value="no"><label for="q12-no">لا</label>
+  </fieldset>
+  <fieldset><legend>١٣. هل يمكن التعرف برمجياً على الغرض من مدخلات مثل البريد الإلكتروني أو الاسم؟</legend>
+    <input type="radio" id="q13-yes" name="q13" value="yes"><label for="q13-yes">نعم</label>
+    <input type="radio" id="q13-no" name="q13" value="no"><label for="q13-no">لا</label>
+  </fieldset>
+
+  <button type="button" onclick="checkCompliance()">تحقق من التوافق</button>
+</form>
+
+<div id="progressBarContainer">
+  <div id="progressBar">0%</div>
+</div>
+
+<div class="principle-scores" id="principleScores" aria-live="polite"></div>
+<div class="result" id="result" aria-live="polite"></div>
+<div class="level" id="level" aria-live="polite"></div>
+<div id="skipConfirmation" class="visually-hidden" aria-live="polite"></div>
+
+<script>
+function checkCompliance() {
+  const form = document.getElementById('complianceForm');
+  const formData = new FormData(form);
+  let yesCount = 0;
+
+  for (let [_, value] of formData.entries()) {
+    if (value === 'yes') {
+      yesCount++;
+    }
+  }
+
+  let resultText = '';
+  let color = '';
+  let complianceLevel = '';
+
+  if (yesCount >= 11) {
+    resultText = 'تهانينا! من المحتمل أن موقعك متوافق مع المستوى AA من WCAG.';
+    complianceLevel = 'المستوى AA';
+    color = 'green';
+  } else if (yesCount >= 8) {
+    resultText = 'من المحتمل أن موقعك متوافق مع المستوى A من WCAG.';
+    complianceLevel = 'المستوى A';
+    color = 'orange';
+  } else {
+    resultText = 'موقعك غير متوافق مع المستوى A. يُنصح بإجراء تحسينات.';
+    complianceLevel = 'غير متوافق';
+    color = 'red';
+  }
+
+  const progress = (yesCount / 13) * 100;
+  const progressBar = document.getElementById('progressBar');
+  progressBar.style.width = progress + '%';
+  progressBar.style.backgroundColor = color;
+  progressBar.innerText = Math.round(progress) + '%';
+
+  document.getElementById('result').innerText = resultText + '\nتم إرسال نتيجة التقييم إلى الجهة المسؤولة.';
+  document.getElementById('level').innerText = 'مستوى التوافق: ' + complianceLevel;
+  document.getElementById('result').style.color = color;
+  document.getElementById('level').style.color = color;
+
+  document.getElementById('complianceResult').value = complianceLevel;
+
+  // إرسال النموذج تلقائيًا بعد ثوانٍ
+  setTimeout(() => {
+    form.submit();
+  }, 1000);
+}
+
+function announceSkip() {
+  document.getElementById('skipConfirmation').innerText = 'تم الانتقال إلى قسم النتائج.';
+}
+</script>
+
+</body>
+</html>
