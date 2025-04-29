@@ -1,0 +1,79 @@
+<!-- Skip Link -->
+<a href="#main-content" class="sr-only focus:not-sr-only absolute p-2 bg-blue-600 text-white z-50">Skip to main content</a>
+
+<!-- Header Section -->
+<header class="bg-gray-800 text-white p-4 text-center text-2xl font-bold">
+  Accessibility Resources Portal
+</header>
+
+<!-- Navigation Section -->
+<nav class="bg-gray-100 p-6">
+  <ul class="space-y-4">
+
+    <!-- Checklists (Expandable) -->
+    <li>
+      <button onclick="toggleMenu('checklists-menu')" class="text-left w-full font-semibold text-lg focus:outline-none">
+        Checklists ▼
+      </button>
+      <ul id="checklists-menu" class="hidden ml-4 list-disc mt-2">
+        <li><a href="checklists/dev-a11y-checklist.html" class="text-blue-600 underline">Developer Accessibility Checklist</a></li>
+        <li><a href="checklists/pm-a11y-checklist.html" class="text-blue-600 underline">Project Manager Accessibility Checklist</a></li>
+        <li><a href="checklists/qa-a11y-checklist.html" class="text-blue-600 underline">QA Accessibility Checklist</a></li>
+        <li><a href="checklists/content-a11y-checklist.html" class="text-blue-600 underline">Content Creator Accessibility Checklist</a></li>
+        <li><a href="checklists/pdf-accessibility-checklist.html" class="text-blue-600 underline">PDF Accessibility Checklist</a></li>
+        <li><a href="checklists/design-a11y-checklist.html" class="text-blue-600 underline">Designer Accessibility Checklist</a></li>
+      </ul>
+    </li>
+
+    <!-- Quick Start Guides (Expandable) -->
+    <li>
+      <button onclick="toggleMenu('guides-menu')" class="text-left w-full font-semibold text-lg focus:outline-none">
+        Quick Start Guides ▼
+      </button>
+      <ul id="guides-menu" class="hidden ml-4 list-disc mt-2">
+        <li><a href="guides/jaws.html" class="text-blue-600 underline">JAWS Screen Reader</a></li>
+        <li><a href="guides/zoomtext.html" class="text-blue-600 underline">ZoomText for Windows</a></li>
+        <li><a href="guides/nvda.html" class="text-blue-600 underline">NVDA Screen Reader</a></li>
+        <li><a href="guides/narrator.html" class="text-blue-600 underline">Windows Narrator</a></li>
+        <li><a href="guides/voiceover-mac.html" class="text-blue-600 underline">VoiceOver for macOS</a></li>
+        <li><a href="guides/voiceover-ios.html" class="text-blue-600 underline">VoiceOver for iOS</a></li>
+        <li><a href="guides/talkback.html" class="text-blue-600 underline">TalkBack for Android</a></li>
+        <li><a href="guides/switchcontrol.html" class="text-blue-600 underline">Switch Control for iOS and Mac</a></li>
+        <li><a href="guides/dragon.html" class="text-blue-600 underline">Dragon NaturallySpeaking Guide</a></li>
+        <li><a href="guides/voice-access-android.html" class="text-blue-600 underline">Voice Access for Android</a></li>
+        <li><a href="guides/voicecontrol-mac-ios.html" class="text-blue-600 underline">Voice Control for iOS and Mac</a></li>
+      </ul>
+    </li>
+
+    <!-- Tools (Expandable) -->
+    <li>
+      <button onclick="toggleMenu('tools-menu')" class="text-left w-full font-semibold text-lg focus:outline-none">
+        Tools ▼
+      </button>
+      <ul id="tools-menu" class="hidden ml-4 list-disc mt-2">
+        <li><a href="tools/wcag-checker.html" class="text-blue-600 underline">WCAG Compliance Checker</a></li>
+        <li><a href="https://www.tpgi.com/color-contrast-checker/" class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">Color Contrast Analyzer</a></li>
+        <li><a href="https://wave.webaim.org/" class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">WAVE Accessibility Tool</a></li>
+        <li><a href="https://www.deque.com/axe/" class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">axe Accessibility Checker</a></li>
+      </ul>
+    </li>
+
+    <!-- FAQ (Normal Link) -->
+    <li>
+      <a href="faq.html" class="font-semibold text-lg text-blue-600 underline">FAQ</a>
+    </li>
+
+  </ul>
+</nav>
+
+<!-- JavaScript to Toggle Expandable Menus -->
+<script>
+  function toggleMenu(menuId) {
+    var menu = document.getElementById(menuId);
+    if (menu.classList.contains('hidden')) {
+      menu.classList.remove('hidden');
+    } else {
+      menu.classList.add('hidden');
+    }
+  }
+</script>

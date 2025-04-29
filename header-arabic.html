@@ -1,0 +1,80 @@
+<!-- Skip Link -->
+<a href="#main-content" class="sr-only focus:not-sr-only absolute p-2 bg-blue-600 text-white z-50">تخطي إلى المحتوى الرئيسي</a>
+
+<!-- Header Section -->
+<header class="bg-gray-800 text-white p-4 text-center text-2xl font-bold" dir="rtl">
+  بوابة موارد الوصول الرقمي
+</header>
+
+<!-- Navigation Section -->
+<nav class="bg-gray-100 p-6" dir="rtl">
+  <ul class="space-y-4">
+
+    <!-- Checklists (Expandable) -->
+    <li>
+      <button onclick="toggleMenu('checklists-menu')" class="text-right w-full font-semibold text-lg focus:outline-none">
+        قوائم المراجعة ▼
+      </button>
+      <ul id="checklists-menu" class="hidden mr-4 list-disc mt-2">
+        <li><a href="checklists-ar/dev-a11y-checklist-ar.html" class="text-blue-600 underline">قائمة مراجعة إمكانية وصول المطورين</a></li>
+        <li><a href="checklists-ar/pm-a11y-checklist-ar.html" class="text-blue-600 underline">قائمة مراجعة إمكانية وصول مديري المشاريع</a></li>
+        <li><a href="checklist-ar/qa-a11y-checklist-ar.html" class="text-blue-600 underline">قائمة مراجعة إمكانية وصول المختبرين</a></li>
+        <li><a href="checklist-ar/ux-ui-a11y-checklist-ar.html" class="text-blue-600 underline">قائمة مراجعة إمكانية وصول واجهة المستخدم UX/UI</a></li>
+        <li><a href="checklist-ar/pdf-accessibilitey-checklist-ar.html" class="text-blue-600 underline">قائمة مراجعة إمكانية وصول ملفات PDF</a></li>
+      </ul>
+    </li>
+
+    <!-- Quick Start Guides (Expandable) -->
+    <li>
+      <button onclick="toggleMenu('guides-menu')" class="text-right w-full font-semibold text-lg focus:outline-none">
+        أدلة البدء السريع ▼
+      </button>
+      <ul id="guides-menu" class="hidden mr-4 list-disc mt-2">
+        <li><a href="guides-ar/jaws-quick-ar.html" class="text-blue-600 underline">دليل قارئ الشاشة JAWS</a></li>
+        <li><a href="guides-ar/nvda-quick-ar.html" class="text-blue-600 underline">دليل قارئ الشاشة NVDA</a></li>
+        <li><a href="guides-ar/narrator-quick-ar.html" class="text-blue-600 underline">دليل الراوي لنظام ويندوز</a></li>
+        <li><a href="guides-ar/dragon-quick-ar.html" class="text-blue-600 underline">دليل Dragon NaturallySpeaking</a></li>
+        <li><a href="guides-ar/switchcontrol-quick-ar.html" class="text-blue-600 underline">دليل التحكم بالمفاتيح (iOS و macOS)</a></li>
+        <li><a href="guides-ar/talkback-quick-ar.html" class="text-blue-600 underline">دليل TalkBack لنظام أندرويد</a></li>
+        <li><a href="guides-ar/voice-access-android-quick-ar.html" class="text-blue-600 underline">دليل Voice Access (أندرويد)</a></li>
+        <li><a href="guides-ar/voicecontrol-mak-ios-quick-ar.html" class="text-blue-600 underline">دليل التحكم الصوتي (iOS و macOS)</a></li>
+        <li><a href="guides-ar/voiceover-iOS-quick-ar.html" class="text-blue-600 underline">دليل VoiceOver (iOS)</a></li>
+        <li><a href="guides-ar/voiceover-mac-quick-ar.html" class="text-blue-600 underline">دليل VoiceOver (macOS)</a></li>
+        <li><a href="guides-ar/zoomtext-quick-ar.html" class="text-blue-600 underline">دليل ZoomText لنظام ويندوز</a></li>
+      </ul>
+    </li>
+
+    <!-- Tools (Expandable) -->
+    <li>
+      <button onclick="toggleMenu('tools-menu')" class="text-right w-full font-semibold text-lg focus:outline-none">
+        الأدوات ▼
+      </button>
+      <ul id="tools-menu" class="hidden mr-4 list-disc mt-2">
+        <li><a href="/tools-ar/wcag-checker-a-aa-only-ar.html" class="text-blue-600 underline">مدقق WCAG (مستوى A و AA)</a></li>
+        <li><a href="Accessibility_Audit_Template_20250426.xlsx" class="text-blue-600 underline">قالب تدقيق الوصول (Excel)</a></li>
+        <li><a href="https://wave.webaim.org/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">أداة WebAIM WAVE</a></li>
+        <li><a href="https://achecker.achecks.ca/checker/index.php" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">أداة AChecker للتحقق من الوصول</a></li>
+        <li><a href="https://www.deque.com/axe/devtools/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">أداة axe DevTools للاختبار</a></li>
+        <li><a href="https://www.nvaccess.org/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">موقع NVDA الرسمي</a></li>
+      </ul>
+    </li>
+
+    <!-- FAQ (Normal Link) -->
+    <li>
+      <a href="tools/accessibilitey-faq-ar.html" class="font-semibold text-lg text-blue-600 underline">الأسئلة الشائعة حول الوصول الرقمي</a>
+    </li>
+
+  </ul>
+</nav>
+
+<!-- JavaScript to Toggle Expandable Menus -->
+<script>
+  function toggleMenu(menuId) {
+    var menu = document.getElementById(menuId);
+    if (menu.classList.contains('hidden')) {
+      menu.classList.remove('hidden');
+    } else {
+      menu.classList.add('hidden');
+    }
+  }
+</script>

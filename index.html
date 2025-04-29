@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Resources Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen">
+  <a href="#main-content" class="sr-only focus:not-sr-only">Skip to Main Content</a>
+
+  <div id="global-header"></div>
+
+  <main id="main-content" class="flex-1 p-6 max-w-5xl mx-auto space-y-6">
+    <h2 class="text-2xl font-bold mb-4">Welcome to the Accessibility Resources Portal</h2>
+    <p>This site provides accessibility checklists, quick start guides for assistive technologies, and tools to help you create and test accessible digital content for web, mobile, and documents. Explore the resources to enhance your accessibility knowledge and implementation.</p>
+  </main>
+
+  <div id="global-footer"></div>
+
+  <script>
+    // Load Global Header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-header').innerHTML = data;
+      });
+
+    // Load Global Footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('global-footer').innerHTML = data;
+      });
+  </script>
+</body>
+</html>
