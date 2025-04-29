@@ -93,15 +93,14 @@
 <!-- JavaScript with ARIA support -->
 <script>
   function toggleMenu(menuId, button) {
-    var menu = document.getElementById(menuId);
-    var isExpanded = button.getAttribute('aria-expanded') === 'true';
+    const menu = document.getElementById(menuId);
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
     button.setAttribute('aria-expanded', String(!isExpanded));
+    menu.hidden = isExpanded;
 
-    if (isExpanded) {
-      menu.hidden = true;
-    } else {
-      menu.hidden = false;
-    }
+    button.innerHTML = button.innerHTML.includes('▼') 
+      ? button.innerHTML.replace('▼', '▲') 
+      : button.innerHTML.replace('▲', '▼');
   }
 </script>
