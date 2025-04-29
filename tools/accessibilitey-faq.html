@@ -1,0 +1,72 @@
+import React, { useState } from "react";
+
+export default function AccessibilityFAQ() {
+  const [openQuestion, setOpenQuestion] = useState(null);
+
+  const faqs = [
+    {
+      question: "Why do we care about accessibility in the digital world (web and mobile)?",
+      answer: "Accessibility ensures that everyone, including people with disabilities, can perceive, understand, navigate, and interact with digital content. It promotes equal access, inclusion, and is often legally required (e.g., ADA, WCAG standards)."
+    },
+    {
+      question: "What are the major types of disabilities that impact digital access?",
+      answer: "The main categories are: visual (blindness, low vision, color blindness), auditory (deafness, hard of hearing), motor/mobility (difficulty with fine motor control), cognitive (learning disabilities, memory issues), and speech disabilities."
+    },
+    {
+      question: "What is Assistive Technology (AT)?",
+      answer: "Assistive Technology (AT) refers to software or hardware tools that help people with disabilities interact with computers and mobile devices. Examples include screen readers, magnifiers, voice input tools, and switch devices."
+    },
+    {
+      question: "What is a screen reader?",
+      answer: "A screen reader is software that reads digital text aloud. It helps blind and visually impaired users navigate websites, applications, and mobile devices by converting on-screen information into synthesized speech or braille."
+    },
+    {
+      question: "How does a screen reader work?",
+      answer: "Screen readers interpret the content of a page by reading the structure (headings, links, buttons, tables, etc.) and any available alternative text for images. Users navigate using keyboard shortcuts to jump between elements like headings, form fields, and links."
+    },
+    {
+      question: "What are other examples of Assistive Technologies?",
+      answer: "Other examples include screen magnifiers (for low vision), voice recognition software (for hands-free use), switch devices (for users with limited mobility), and refreshable braille displays."
+    },
+    {
+      question: "How can we make digital content accessible?",
+      answer: "Use semantic HTML (correct heading order, buttons, and links), provide alternative text for images, ensure sufficient color contrast, support keyboard navigation, create descriptive link text, and test content with screen readers and other AT."
+    }
+  ];
+
+  const toggleQuestion = (index) => {
+    setOpenQuestion(openQuestion === index ? null : index);
+  };
+
+  return (
+    <main className="p-6 max-w-3xl mx-auto space-y-6">
+      <h1 className="text-3xl font-bold">Accessibility FAQ</h1>
+
+      <section>
+        {faqs.map((faq, index) => (
+          <div key={index} className="border rounded mb-4">
+            <button
+              className="w-full text-left p-4 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              aria-expanded={openQuestion === index}
+              aria-controls={`faq-${index}`}
+              id={`faq-button-${index}`}
+              onClick={() => toggleQuestion(index)}
+            >
+              <span className="font-semibold">{faq.question}</span>
+            </button>
+            {openQuestion === index && (
+              <div
+                id={`faq-${index}`}
+                role="region"
+                aria-labelledby={`faq-button-${index}`}
+                className="p-4"
+              >
+                {faq.answer}
+              </div>
+            )}
+          </div>
+        ))}
+      </section>
+    </main>
+  );
+}
