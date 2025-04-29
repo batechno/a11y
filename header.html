@@ -18,15 +18,16 @@
     <!-- Checklists (Expandable) -->
     <li>
       <button
-        type="button"
-        aria-expanded="false"
-        aria-controls="checklists-menu"
-        onclick="toggleMenu('checklists-menu', this)"
-        class="text-left w-full font-semibold text-lg focus:outline-none"
-      >
-        Checklists ▼
-      </button>
-      <ul id="checklists-menu" hidden class="ml-4 list-disc mt-2">
+  type="button"
+  aria-expanded="false"
+  aria-controls="checklists-menu"
+  onclick="toggleMenu('checklists-menu', this)"
+  class="text-left w-full font-semibold text-lg focus:outline-none"
+>
+  <span class="button-text">Checklists</span> 
+  <span class="button-icon">▼</span>
+</button>
+<ul id="checklists-menu" hidden class="ml-4 list-disc mt-2">
         <li><a href="checklists/dev-a11y-checklist.html" class="text-blue-600 underline">Developer Accessibility Checklist</a></li>
         <li><a href="checklists/pm-a11y-checklist.html" class="text-blue-600 underline">Project Manager Accessibility Checklist</a></li>
         <li><a href="checklists/qa-a11y-checklist.html" class="text-blue-600 underline">QA Accessibility Checklist</a></li>
@@ -99,8 +100,10 @@
     button.setAttribute('aria-expanded', String(!isExpanded));
     menu.hidden = isExpanded;
 
-    button.innerHTML = button.innerHTML.includes('▼') 
-      ? button.innerHTML.replace('▼', '▲') 
-      : button.innerHTML.replace('▲', '▼');
+    // Only change the icon, not the whole button content
+    const icon = button.querySelector('.button-icon');
+    if (icon) {
+      icon.textContent = isExpanded ? '▼' : '▲';
+    }
   }
 </script>
